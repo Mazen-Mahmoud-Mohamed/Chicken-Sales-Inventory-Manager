@@ -443,7 +443,7 @@ This project is licensed under the **MIT License**.
 ```
 MIT License
 
-Copyright (c) 2026 Mohamed Mahmoud
+Copyright (c) 2026 Mazen Mahmoud
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -468,12 +468,12 @@ SOFTWARE.
 
 ## Author
 
-**Mohamed Mahmoud**
+**Mazen Mahmoud**
 
 Desktop application developer — building practical tools for retail and inventory management.
 
-- GitHub: [@your-username](https://github.com/your-username)
-- Repository: `https://github.com/your-username/chicken-sales-manager`
+- GitHub: [@Mazen-Mahmoud-Mohamed](https://github.com/Mazen-Mahmoud-Mohamed)
+- Repository: `https://github.com/Mazen-Mahmoud-Mohamed/Chicken-Sales-Inventory-Manager`
 
 ---
 

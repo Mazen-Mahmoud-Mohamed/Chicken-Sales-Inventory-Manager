@@ -1,0 +1,50 @@
+{
+  "name": "chicken-sales-manager",
+  "version": "1.0.0",
+  "description": "Professional desktop application for managing daily chicken sales",
+  "main": "electron/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "server": "node backend/server.js",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "electron",
+    "chicken-sales",
+    "mongodb",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.3",
+    "pdfkit": "^0.15.0"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.chickensales.manager",
+    "productName": "مدير مبيعات الدجاج",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron/**/*",
+      "backend/**/*",
+      "frontend/**/*",
+      ".env",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

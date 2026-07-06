@@ -1,0 +1,145 @@
+@import url('../variables.css');
+
+.top-section {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.top-section-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.inventory-alert {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(230, 57, 70, 0.1);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-sm);
+  color: var(--color-danger-dark);
+  font-weight: 500;
+}
+
+.category-prices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.category-price-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.category-price-item label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.category-price-item input {
+  padding: 8px 12px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+}
+
+.category-price-item input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.sale-form-section {
+  margin-bottom: 24px;
+}
+
+.sale-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.calculated-price-display {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  text-align: center;
+}
+
+.calculated-price-label {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin-bottom: 4px;
+}
+
+.calculated-price-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.sale-actions {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+}
+
+.dashboard-stats {
+  margin-top: 8px;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: 16px;
+}
+
+.modal-lg {
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.inventory-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.inventory-item-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 1024px) {
+  .sale-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sale-actions {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .top-section,
+  .sale-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

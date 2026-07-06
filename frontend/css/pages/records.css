@@ -1,0 +1,70 @@
+@import url('../variables.css');
+
+.filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--color-text-muted);
+}
+
+.empty-state-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.records-summary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.summary-item {
+  background: var(--color-bg);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.summary-item strong {
+  color: var(--color-primary-dark);
+}
+
+@media print {
+  .navbar,
+  .toolbar,
+  .filters-bar,
+  .table-actions,
+  .btn {
+    display: none !important;
+  }
+
+  .card {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  body {
+    background: #fff;
+  }
+}

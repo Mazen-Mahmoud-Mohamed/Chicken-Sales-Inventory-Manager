@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' http://*:* ws://*:*">
+  <title>التقارير — مدير مبيعات الدجاج</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/reports.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="navbar" id="navbar"></nav>
+
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">تقارير المبيعات</h1>
+        <p class="page-subtitle">تحليل المبيعات حسب الفئة وتصدير التقارير</p>
+      </div>
+      <a href="index.html" class="btn btn-secondary">العودة للرئيسية</a>
+    </div>
+
+    <section class="card">
+      <div class="report-filters">
+        <div class="filter-group">
+          <label for="reportDateFrom">من تاريخ</label>
+          <input type="date" id="reportDateFrom" class="form-input">
+        </div>
+        <div class="filter-group">
+          <label for="reportDateTo">إلى تاريخ</label>
+          <input type="date" id="reportDateTo" class="form-input">
+        </div>
+        <button type="button" id="generateReportBtn" class="btn btn-primary">إنشاء التقرير</button>
+      </div>
+
+      <div class="report-actions">
+        <button type="button" id="printReportBtn" class="btn btn-secondary">طباعة التقرير</button>
+        <button type="button" id="exportPdfBtn" class="btn btn-secondary">تصدير PDF</button>
+        <button type="button" id="exportExcelBtn" class="btn btn-secondary">تصدير Excel</button>
+      </div>
+
+      <div class="report-summary-grid" id="reportSummary">
+        <div class="report-stat-card">
+          <div class="report-stat-label">إجمالي المبلغ</div>
+          <div class="report-stat-value" id="reportTotalMoney">0.00</div>
+        </div>
+        <div class="report-stat-card">
+          <div class="report-stat-label">الوزن المباع</div>
+          <div class="report-stat-value"><span id="reportSoldWeight">0</span> كجم</div>
+        </div>
+        <div class="report-stat-card">
+          <div class="report-stat-label">الفراخ المباعة</div>
+          <div class="report-stat-value" id="reportSoldChickens">0</div>
+        </div>
+        <div class="report-stat-card">
+          <div class="report-stat-label">عدد الفراخ المتبقي</div>
+          <div class="report-stat-value" id="reportRemainingChickens">0</div>
+        </div>
+        <div class="report-stat-card">
+          <div class="report-stat-label">عدد المبيعات</div>
+          <div class="report-stat-value" id="reportSalesCount">0</div>
+        </div>
+      </div>
+
+      <h3 class="chart-title mt-3">المبيعات حسب الفئة</h3>
+      <div class="category-report-grid" id="categoryReportGrid">
+        <p class="text-muted">قم بإنشاء تقرير لعرض البيانات</p>
+      </div>
+
+      <div class="chart-container" id="chartContainer">
+        <h3 class="chart-title">نظرة عامة على المبيعات اليومية</h3>
+        <div class="chart-bars" id="chartBars">
+          <p class="text-muted text-center" style="width:100%">قم بإنشاء تقرير لعرض الرسوم البيانية</p>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="data-table" id="dailySalesTable">
+          <thead>
+            <tr>
+              <th>التاريخ</th>
+              <th>إجمالي المبلغ</th>
+              <th>الوزن المباع (كجم)</th>
+              <th>الفراخ المباعة</th>
+              <th>عدد المبيعات</th>
+            </tr>
+          </thead>
+          <tbody id="dailySalesBody">
+            <tr>
+              <td colspan="5" class="text-center text-muted">لا توجد بيانات</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script type="module" src="js/config.js"></script>
+  <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/api.js"></script>
+  <script type="module" src="js/sync.js"></script>
+  <script type="module" src="js/components/navbar.js"></script>
+  <script type="module" src="js/pages/reports.js"></script>
+</body>
+</html>
